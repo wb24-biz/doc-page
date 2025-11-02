@@ -20,7 +20,7 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://docs.wb24.biz',
+  url: 'https://doc.wb24.biz',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -28,7 +28,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'wb24.biz', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
+  projectName: 'doc-page', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -50,7 +50,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/wb24-biz/doc-page/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -96,7 +96,7 @@ const config = {
             items: [
               {
                 label: 'Посібник',
-                to: '/docs/intro',
+                to: '/docs/dashboard',
               },
             ],
           },
