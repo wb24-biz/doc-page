@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Documentations',
-  tagline: 'Documentations for WB24.BIZ services',
+  title: 'Документація',
+  tagline: 'Документація for WB24.BIZ services',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -45,6 +45,20 @@ const config = {
     },
   },
 
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['en', 'ru'],
+        indexBlog: false,
+        docsRouteBasePath: '/docs',
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -74,7 +88,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'WB24.BIZ | DOC',
+        title: 'WB24.BIZ',
         logo: {
           alt: 'wb24.biz Logo',
           src: 'img/logo.png',
@@ -104,7 +118,7 @@ const config = {
             title: 'Документація',
             items: [
               {
-                label: 'Посібник',
+                label: 'Вступ',
                 to: '/docs/intro',
               },
             ],

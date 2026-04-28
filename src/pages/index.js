@@ -9,17 +9,17 @@ import styles from './index.module.css';
 
 const COPY = {
   ukr: {
-    tagline: 'Документація до адмін-панелі WaterBiz',
+    tagline: 'Документація до адмін-панелі WB24',
     cta: 'Почати →',
     metaDescription: 'Документація до платформи WB24.BIZ для керування мережею вендингових автоматів.',
   },
   ru: {
-    tagline: 'Документация к админ-панели WaterBiz',
+    tagline: 'Документация к админ-панели WB24',
     cta: 'Начать →',
     metaDescription: 'Документация к платформе WB24.BIZ для управления сетью вендинговых автоматов.',
   },
   en: {
-    tagline: 'WaterBiz admin panel documentation',
+    tagline: 'WB24 admin panel documentation',
     cta: 'Get started →',
     metaDescription: 'Documentation for the WB24.BIZ platform — manage your water vending machine network.',
   },

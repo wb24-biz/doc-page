@@ -10,9 +10,9 @@ const SECTIONS = [
     icon: '🚀',
     titles: {ukr: 'Початок', ru: 'Начало', en: 'Getting started'},
     descriptions: {
-      ukr: 'Що таке WaterBiz, як увійти до панелі та орієнтуватися в інтерфейсі.',
-      ru: 'Что такое WaterBiz, как войти в панель и ориентироваться в интерфейсе.',
-      en: 'What WaterBiz is, how to log in, and how to navigate the panel.',
+      ukr: 'Що таке WB24, як увійти до панелі та орієнтуватися в інтерфейсі.',
+      ru: 'Что такое WB24, как войти в панель и ориентироваться в интерфейсе.',
+      en: 'What WB24 is, how to log in, and how to navigate the panel.',
     },
   },
   {

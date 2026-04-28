@@ -1,5 +1,5 @@
 /**
- * Global styles. Harmonized with the WaterBiz admin panel
+ * Global styles. Harmonized with the WB24 admin panel
  * (frontWatermat/dashboard/src/styles/) — Roboto font, Mantine-blue
  * primary, dark navbar gradient, soft light-grey body.
  */
@@ -74,6 +74,15 @@
 }
 .navbar__items--right .navbar__item {
   color: #ffffff;
+}
+/* Color-mode toggle icon: navbar is always dark, so force the icon white
+   in both themes (otherwise the light-mode sun icon disappears on the
+   dark gradient). */
+.navbar .clean-btn {
+  color: #ffffff;
+}
+.navbar .clean-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 .navbar .dropdown__menu {
   background: #1a2438;
