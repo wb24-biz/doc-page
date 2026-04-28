@@ -1,30 +1,189 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global styles. Harmonized with the WaterBiz admin panel
+ * (frontWatermat/dashboard/src/styles/) — Roboto font, Mantine-blue
+ * primary, dark navbar gradient, soft light-grey body.
  */
 
-/* You can override the default Infima variables here. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --ifm-color-primary: #2e4885bd;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Primary = Mantine blue #228be6 (matches admin panel accent) */
+  --ifm-color-primary: #228be6;
+  --ifm-color-primary-dark: #1c7ed6;
+  --ifm-color-primary-darker: #1971c2;
+  --ifm-color-primary-darkest: #1864ab;
+  --ifm-color-primary-light: #339af0;
+  --ifm-color-primary-lighter: #4dabf7;
+  --ifm-color-primary-lightest: #74c0fc;
+
+  --ifm-font-family-base: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ifm-heading-font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ifm-heading-font-weight: 600;
+  --ifm-font-weight-semibold: 600;
+
+  --ifm-background-color: #f1f3f7;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-color-emphasis-200: #dbe0e5;
+  --ifm-color-emphasis-300: #b8c4d0;
+
+  --ifm-global-radius: 10px;
+  --ifm-card-border-radius: 12px;
+  --ifm-button-border-radius: 8px;
+  --ifm-alert-border-radius: 10px;
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+
+  /* Admin-panel signature gradient (used on navbar + hero) */
+  --wb-gradient: linear-gradient(180deg, #131c2d 0%, #363a41 100%);
+  --wb-gradient-hero: linear-gradient(135deg, #131c2d 0%, #2a3447 60%, #363a41 100%);
+  --wb-hover-bg: #f1f6ff;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #4dabf7;
+  --ifm-color-primary-dark: #339af0;
+  --ifm-color-primary-darker: #228be6;
+  --ifm-color-primary-darkest: #1c7ed6;
+  --ifm-color-primary-light: #74c0fc;
+  --ifm-color-primary-lighter: #a5d8ff;
+  --ifm-color-primary-lightest: #d0ebff;
+
+  --ifm-background-color: #131c2d;
+  --ifm-background-surface-color: #1a2438;
+  --ifm-color-emphasis-200: rgba(255, 255, 255, 0.1);
+  --ifm-color-emphasis-300: rgba(255, 255, 255, 0.18);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+  --wb-hover-bg: rgba(34, 139, 230, 0.1);
+}
+
+/* ---- Navbar: dark gradient like the admin sidebar ---- */
+.navbar {
+  background: var(--wb-gradient);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+}
+.navbar__title,
+.navbar__link,
+.navbar__brand {
+  color: #ffffff;
+}
+.navbar__link:hover,
+.navbar__link--active {
+  color: #4dabf7;
+}
+.navbar__items--right .navbar__item {
+  color: #ffffff;
+}
+.navbar .dropdown__menu {
+  background: #1a2438;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.navbar .dropdown__link {
+  color: #e6ebf2;
+}
+.navbar .dropdown__link:hover,
+.navbar .dropdown__link--active {
+  background: rgba(34, 139, 230, 0.18);
+  color: #ffffff;
+}
+.navbar-sidebar {
+  background: var(--wb-gradient);
+}
+.navbar-sidebar__brand {
+  background: transparent;
+  box-shadow: none;
+}
+.navbar-sidebar__items .menu__link {
+  color: #e6ebf2;
+}
+.navbar-sidebar__items .menu__link:hover,
+.navbar-sidebar__items .menu__link--active {
+  background: rgba(34, 139, 230, 0.18);
+  color: #ffffff;
+}
+[data-theme='dark'] .navbar {
+  background: var(--wb-gradient);
+}
+
+/* ---- Body background matches admin panel content area ---- */
+html[data-theme='light'],
+html[data-theme='light'] body {
+  background-color: #f1f3f7;
+}
+
+/* ---- Sidebar (left docs menu): light, soft borders, blue accent ---- */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+}
+.menu {
+  font-weight: 400;
+}
+.menu__link {
+  border-radius: 8px;
+}
+.menu__link:hover {
+  background: var(--wb-hover-bg);
+}
+.menu__link--active:not(.menu__link--sublist) {
+  background: rgba(34, 139, 230, 0.12);
+  color: var(--ifm-color-primary-darker);
+  font-weight: 500;
+}
+.menu__list-item-collapsible--active {
+  background: rgba(34, 139, 230, 0.08);
+}
+
+/* ---- Cards / surfaces ---- */
+.card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-card-border-radius);
+}
+
+/* ---- Buttons ---- */
+.button--secondary {
+  background: #ffffff;
+  color: var(--ifm-color-primary-darker);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+.button--secondary:hover {
+  background: var(--wb-hover-bg);
+  color: var(--ifm-color-primary-darkest);
+  border-color: var(--ifm-color-primary-light);
+}
+
+/* ---- Footer: same dark gradient as the navbar ---- */
+.footer--dark {
+  background: var(--wb-gradient);
+}
+
+/* ---- Tables: match admin-panel table look (subtle grey borders) ---- */
+.markdown table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.markdown table thead {
+  background: #f8fafc;
+}
+.markdown table th,
+.markdown table td {
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+/* ---- Admonitions: softer rounded look ---- */
+.alert {
+  border-radius: var(--ifm-alert-border-radius);
+}
+
+/* ---- Pagination cards on doc pages ---- */
+.pagination-nav__link {
+  border-radius: 10px;
+  border-color: var(--ifm-color-emphasis-200);
+}
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--wb-hover-bg);
 }

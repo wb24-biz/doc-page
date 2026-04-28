@@ -1,0 +1,8 @@
+{
+  "label": "Тарифи",
+  "position": 7,
+  "link": {
+    "type": "doc",
+    "id": "tariffs/index"
+  }
+}

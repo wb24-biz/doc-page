@@ -1,0 +1,34 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Початок": {
+    "message": "Початок",
+    "description": "The label for category 'Початок' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Огляд": {
+    "message": "Огляд",
+    "description": "The label for category 'Огляд' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Автомати": {
+    "message": "Автомати",
+    "description": "The label for category 'Автомати' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Замовлення": {
+    "message": "Замовлення",
+    "description": "The label for category 'Замовлення' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Платежі": {
+    "message": "Платежі",
+    "description": "The label for category 'Платежі' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Тарифи": {
+    "message": "Тарифи",
+    "description": "The label for category 'Тарифи' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Налаштування": {
+    "message": "Налаштування",
+    "description": "The label for category 'Налаштування' in sidebar 'tutorialSidebar'"
+  }
+}

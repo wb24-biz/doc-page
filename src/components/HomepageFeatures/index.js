@@ -1,61 +1,115 @@
 import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-const FeatureList = [
-  /*{
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+const SECTIONS = [
+  {
+    to: '/docs/getting-started/overview',
+    icon: '🚀',
+    titles: {ukr: 'Початок', ru: 'Начало', en: 'Getting started'},
+    descriptions: {
+      ukr: 'Що таке WaterBiz, як увійти до панелі та орієнтуватися в інтерфейсі.',
+      ru: 'Что такое WaterBiz, как войти в панель и ориентироваться в интерфейсе.',
+      en: 'What WaterBiz is, how to log in, and how to navigate the panel.',
+    },
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
+    to: '/docs/dashboard',
+    icon: '📊',
+    titles: {ukr: 'Огляд', ru: 'Обзор', en: 'Overview'},
+    descriptions: {
+      ukr: 'Ключові показники мережі автоматів і деталізована статистика.',
+      ru: 'Ключевые показатели сети автоматов и детальная статистика.',
+      en: 'Key network metrics and detailed statistics.',
+    },
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },*/
+    to: '/docs/machines',
+    icon: '🤖',
+    titles: {ukr: 'Автомати', ru: 'Автоматы', en: 'Machines'},
+    descriptions: {
+      ukr: 'Реєстр пристроїв, типи автоматів і керування прошивками.',
+      ru: 'Реестр устройств, типы автоматов и управление прошивками.',
+      en: 'Device registry, machine types, and firmware management.',
+    },
+  },
+  {
+    to: '/docs/orders',
+    icon: '📦',
+    titles: {ukr: 'Замовлення', ru: 'Заказы', en: 'Orders'},
+    descriptions: {
+      ukr: 'Історія продажів і ручне оформлення замовлень оператором.',
+      ru: 'История продаж и ручное оформление заказов оператором.',
+      en: 'Sales history and manual order entry by an operator.',
+    },
+  },
+  {
+    to: '/docs/payments',
+    icon: '💳',
+    titles: {ukr: 'Платежі', ru: 'Платежи', en: 'Payments'},
+    descriptions: {
+      ukr: 'Транзакції, еквайринг, фіскалізація та чеки.',
+      ru: 'Транзакции, эквайринг, фискализация и чеки.',
+      en: 'Transactions, acquiring, fiscalization, and receipts.',
+    },
+  },
+  {
+    to: '/docs/tariffs',
+    icon: '💰',
+    titles: {ukr: 'Тарифи', ru: 'Тарифы', en: 'Tariffs'},
+    descriptions: {
+      ukr: 'Тарифні плани та облік платежів за використання платформи.',
+      ru: 'Тарифные планы и учёт платежей за использование платформы.',
+      en: 'Tariff plans and platform usage payments.',
+    },
+  },
+  {
+    to: '/docs/settings',
+    icon: '⚙️',
+    titles: {ukr: 'Налаштування', ru: 'Настройки', en: 'Settings'},
+    descriptions: {
+      ukr: 'Користувачі, ролі, домени, валюти та робочі групи.',
+      ru: 'Пользователи, роли, домены, валюты и рабочие группы.',
+      en: 'Users, roles, domains, currencies, and work groups.',
+    },
+  },
 ];
 
-function Feature({Svg, title, description}) {
+function pickLocale(localeKey) {
+  if (localeKey === 'ru' || localeKey === 'en' || localeKey === 'ukr') return localeKey;
+  return 'ukr';
+}
+
+function Feature({to, icon, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
+    <div className={clsx('col col--4', styles.featureCol)}>
+      <Link to={to} className={styles.featureCard}>
+        <div className={styles.featureIcon} aria-hidden="true">{icon}</div>
+        <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+        <p className={styles.featureDesc}>{description}</p>
+      </Link>
     </div>
   );
 }
 
 export default function HomepageFeatures() {
+  const {i18n} = useDocusaurusContext();
+  const locale = pickLocale(i18n.currentLocale);
+
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+          {SECTIONS.map((s) => (
+            <Feature
+              key={s.to}
+              to={s.to}
+              icon={s.icon}
+              title={s.titles[locale]}
+              description={s.descriptions[locale]}
+            />
           ))}
         </div>
       </div>

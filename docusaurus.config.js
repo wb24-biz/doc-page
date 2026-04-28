@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'WB24.BIZ',
+  title: 'Documentations',
   tagline: 'Documentations for WB24.BIZ services',
   favicon: 'img/favicon.ico',
 
@@ -37,7 +37,12 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'ukr',
-    locales: ['en', 'ukr', 'ru'],
+    locales: ['ukr', 'ru', 'en'],
+    localeConfigs: {
+      ukr: {label: 'Українська', htmlLang: 'uk-UA'},
+      ru: {label: 'Русский', htmlLang: 'ru-RU'},
+      en: {label: 'English', htmlLang: 'en-US'},
+    },
   },
 
   presets: [
@@ -65,10 +70,11 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
-        respectPrefersColorScheme: true,
+        defaultMode: 'light',
+        respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'WB24.BIZ',
+        title: 'WB24.BIZ | DOC',
         logo: {
           alt: 'wb24.biz Logo',
           src: 'img/logo.png',
@@ -81,11 +87,14 @@ const config = {
             label: 'Документація',
           },
           {
-            href: 'https://github.com/wb24-biz',
+            href: 'https://github.com/wb24-biz/doc-page',
             label: 'GitHub',
             position: 'right',
           },
-          //{locales: ['en','ukr','ru'], type: 'localeDropdown', position: 'right' },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
         ],
       },
       footer: {
@@ -96,7 +105,7 @@ const config = {
             items: [
               {
                 label: 'Посібник',
-                to: '/docs/dashboard',
+                to: '/docs/intro',
               },
             ],
           },
@@ -122,12 +131,12 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/wb24-biz',
+                href: 'https://github.com/wb24-biz/doc-page',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} wb24.biz. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} wb24.biz.`,
       },
       prism: {
         theme: prismThemes.github,

@@ -1,0 +1,8 @@
+{
+  "label": "Платежі",
+  "position": 6,
+  "link": {
+    "type": "doc",
+    "id": "payments/index"
+  }
+}

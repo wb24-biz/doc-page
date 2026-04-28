@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "WB24.BIZ | DOC",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "wb24.biz Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Документація": {
+    "message": "Документация",
+    "description": "Navbar item with label Документація"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
